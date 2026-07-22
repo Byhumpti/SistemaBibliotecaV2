@@ -8,7 +8,6 @@ import java.util.List;
 public class PrestamoDAO {
 
     public boolean registrarPrestamo(String nombreUsuario, String isbn, String fechaPrestamo, String fechaDevolucion) {
-        // Asegúrate de que 'nombre' sea el nombre exacto de la columna en tu tabla 'usuarios'
         String sqlUsuario = "SELECT id FROM usuarios WHERE nombre = ?";
         String sqlLibro = "SELECT id FROM libros WHERE isbn = ?";
         String sqlPrestamo = "INSERT INTO prestamos (id_usuario, id_libro, fecha_prestamo, fecha_devolucion, estado) VALUES (?, ?, ?, ?, 'Activo')";

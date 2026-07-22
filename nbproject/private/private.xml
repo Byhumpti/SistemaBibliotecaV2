@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/controlador/Conexion.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/modelo/Usuario.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/modelo/Libro.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/modelo/Prestamo.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/modelo/Multa.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/controlador/UsuarioDAO.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/controlador/LibroDAO.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/controlador/PrestamoDAO.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/controlador/MultaDAO.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/vista/FrmLogin.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/vista/FrmLibros.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/vista/FrmMenu.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/vista/FrmPrestamos.java</file>
+            <file>file:/C:/Users/User%7D/Documents/NetBeansProjects/SistemaBibliotecaV2/src/vista/FrmMultas.java</file>
+        </group>
+    </open-files>
+</project-private>
