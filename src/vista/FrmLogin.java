@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import modelo.Cliente;
 
 public class FrmLogin extends JFrame {
 
@@ -22,39 +23,52 @@ public class FrmLogin extends JFrame {
     }
 
     private void initComponentsCustom() {
-        setTitle("Acceso al Sistema - Biblioteca");
-        setSize(380, 240);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setLayout(null);
 
-        JLabel lblUser = new JLabel("Usuario:");
-        lblUser.setBounds(40, 30, 80, 25);
-        add(lblUser);
+    setTitle("Sistema de Biblioteca - Inicio de Sesión");
+    setSize(420, 300);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setLocationRelativeTo(null);
+    setLayout(null);
 
-        txtUsuario = new JTextField();
-        txtUsuario.setBounds(120, 30, 180, 25);
-        add(txtUsuario);
+    JLabel lblTitulo = new JLabel("BIBLIOTECA VIRTUAL", JLabel.CENTER);
+    lblTitulo.setBounds(50, 20, 320, 30);
+    lblTitulo.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 18));
+    add(lblTitulo);
 
-        JLabel lblPass = new JLabel("Contraseña:");
-        lblPass.setBounds(40, 70, 80, 25);
-        add(lblPass);
 
-        txtPassword = new JPasswordField();
-        txtPassword.setBounds(120, 70, 180, 25);
-        add(txtPassword);
+    JLabel lblUser = new JLabel("Usuario:");
+    lblUser.setBounds(60, 75, 80, 25);
+    lblUser.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
+    add(lblUser);
 
-        btnIngresar = new JButton("Iniciar Sesión");
-        btnIngresar.setBounds(40, 120, 130, 30);
-        add(btnIngresar);
+    txtUsuario = new JTextField();
+    txtUsuario.setBounds(150, 75, 180, 28);
+    add(txtUsuario);
 
-        btnRegistrar = new JButton("Registrarse");
-        btnRegistrar.setBounds(190, 120, 110, 30);
-        add(btnRegistrar);
 
-        btnIngresar.addActionListener(e -> validarLogin());
-        btnRegistrar.addActionListener(e -> registrarNuevoUsuario());
-    }
+    JLabel lblPass = new JLabel("Contraseña:");
+    lblPass.setBounds(60, 115, 90, 25);
+    lblPass.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
+    add(lblPass);
+
+    txtPassword = new JPasswordField();
+    txtPassword.setBounds(150, 115, 180, 28);
+    add(txtPassword);
+
+
+    btnIngresar = new JButton("Ingresar");
+    btnIngresar.setBounds(70, 180, 120, 35);
+    add(btnIngresar);
+
+
+    btnRegistrar = new JButton("Registrarse");
+    btnRegistrar.setBounds(220, 180, 120, 35);
+    add(btnRegistrar);
+
+
+    btnIngresar.addActionListener(e -> validarLogin());
+    btnRegistrar.addActionListener(e -> registrarNuevoUsuario());
+}
 
     private void validarLogin() {
         String usuario = txtUsuario.getText().trim();
@@ -71,8 +85,8 @@ public class FrmLogin extends JFrame {
 
 if (u != null) {
             JOptionPane.showMessageDialog(this, "¡Bienvenido, " + u.getNombre() + "!");
-            FrmMenu menu = new FrmMenu(); // <-- Abrimos el panel de control general
-            menu.setVisible(true);
+            FrmMenu menu = new FrmMenu(u);
+menu.setVisible(true);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -108,7 +122,7 @@ if (u != null) {
                 return;
             }
 
-            Usuario nuevoUsuario = new Usuario(0, nombreReal, u, p, "Cliente");
+            Usuario nuevoUsuario = new Cliente(0, nombreReal, u, p);
             UsuarioDAO dao = new UsuarioDAO();
 
             if (dao.registrarUsuario(nuevoUsuario)) {

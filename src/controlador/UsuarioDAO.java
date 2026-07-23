@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import modelo.Cliente;
+import modelo.Administrador;
 
 public class UsuarioDAO {
 
@@ -20,14 +22,22 @@ public class UsuarioDAO {
             ps.setString(2, password);
             
             try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    usuario = new Usuario();
-                    usuario.setId(rs.getInt("id"));
-                    usuario.setNombre(rs.getString("nombre"));
-                    usuario.setUsername(rs.getString("username"));
-                    usuario.setPassword(rs.getString("password"));
-                    usuario.setTipo(rs.getString("tipo"));
-                }
+if (rs.next()) {
+
+    String tipo = rs.getString("tipo");
+
+    if (tipo.equalsIgnoreCase("Cliente")) {
+        usuario = new Cliente();
+    } else {
+        usuario = new Administrador();
+    }
+
+    usuario.setId(rs.getInt("id"));
+    usuario.setNombre(rs.getString("nombre"));
+    usuario.setUsername(rs.getString("username"));
+    usuario.setPassword(rs.getString("password"));
+    usuario.setTipo(tipo);
+}
             }
         } catch (SQLException e) {
             System.err.println("Error en Login: " + e.getMessage());

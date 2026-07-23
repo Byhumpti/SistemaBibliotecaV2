@@ -1,6 +1,7 @@
 package modelo;
 
-public class Usuario {
+public abstract class Usuario implements Autenticable {
+
     private int id;
     private String nombre;
     private String username;
@@ -17,19 +18,53 @@ public class Usuario {
         this.tipo = tipo;
     }
 
+    // Método de la interfaz
+    @Override
+    public boolean iniciarSesion(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);
+    }
+
+    // Método abstracto
+    public abstract String obtenerPermisos();
+
     // Getters y Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
+    public String getNombre() {
+        return nombre;
+    }
 
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }

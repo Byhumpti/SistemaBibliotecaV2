@@ -140,7 +140,7 @@ public class FrmLibros extends JFrame {
                 
             if (confirmacion == JOptionPane.YES_OPTION) {
                 LibroDAO dao = new LibroDAO();
-                if (dao.eliminarLibro(idLibro)) { 
+                if (dao.eliminarLibro(idLibro)) { // Asegúrate de tener este método en tu LibroDAO
                     JOptionPane.showMessageDialog(this, "¡Libro eliminado con éxito!");
                     listarLibros();
                 } else {
